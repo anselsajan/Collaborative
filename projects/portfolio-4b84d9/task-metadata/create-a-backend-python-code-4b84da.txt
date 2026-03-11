@@ -1,0 +1,10 @@
+Task ID: 69afdb294b82e4a68e4b84da
+Title: Create a Backend python code
+Type: backend
+Assigned To: backend
+Status: submitted_for_review
+Framework: N/A
+Exported At: 2026-03-11T14:49:05.062136
+
+Description:
+Number guessing game
