@@ -4,7 +4,7 @@ Type: backend
 Assigned To: backend
 Status: submitted_for_review
 Framework: FastAPI
-Exported At: 2026-03-11T14:51:07.936757
+Exported At: 2026-03-12T22:05:24.791460
 
 Description:
 Create an endpoint
