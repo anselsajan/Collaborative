@@ -1,0 +1,8 @@
+Task ID: 69b0502762f98d3c04a2d8e6
+Title: ui
+Type: frontend
+Assigned To: frontend
+Completed At: 2026-03-12T21:28:27.065195
+
+Description:
+ui for the app
