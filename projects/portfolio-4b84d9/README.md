@@ -2,7 +2,7 @@
 
 Project ID: 69afdb064b82e4a68e4b84d9
 Status: completed
-Exported At: 2026-03-12T22:05:24.791460
+Exported At: 2026-03-12T22:37:42.034815
 
 Description:
 Create a Portfolio.
@@ -11,6 +11,7 @@ Assigned Developers:
 - frontend
 - backend
 - dev
+- dev_test
 
 Included Tasks:
 - Create a Backend python code (backend) - backend
