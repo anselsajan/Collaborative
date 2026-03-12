@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple HTML with CSS</title>
+    <style>
+        /* CSS styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+        }
+        
+        .container {
+            width: 80%;
+            margin: 40px auto;
+            background-color: #fff;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        
+        .container h1 {
+            color: #00698f;
+        }
+        
+        .container p {
+            color: #666;
+        }
+        
+        .container ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .container li {
+            padding: 10px;
+            border-bottom: 1px solid #ccc;
+        }
+        
+        .container li:last-child {
+            border-bottom: none;
+        }
+        
+        .special {
+            background-color: #f0f0f0;
+        }
+        
+        .container a {
+            text-decoration: none;
+            color: #00698f;
+        }
+        
+        .container a:hover {
+            color: #003d5c;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Hello, World!</h1>
+        <p>This is a simple paragraph styled with CSS.</p>
+        <ul>
+            <li>Item one</li>
+            <li>Item two</li>
+            <li class="special">Item three (special)</li>
+        </ul>
+        <a href="https://www.w3schools.com" target="_blank">Visit W3Schools</a>
+    </div>
+</body>
+</html>
