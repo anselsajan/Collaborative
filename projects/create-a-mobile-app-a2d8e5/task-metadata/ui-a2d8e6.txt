@@ -1,0 +1,10 @@
+Task ID: 69b0502762f98d3c04a2d8e6
+Title: ui
+Type: frontend
+Assigned To: frontend
+Status: done
+Framework: N/A
+Exported At: 2026-03-12T21:29:01.011613
+
+Description:
+ui for the app
