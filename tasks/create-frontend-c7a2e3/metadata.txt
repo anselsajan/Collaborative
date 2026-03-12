@@ -1,0 +1,8 @@
+Task ID: 69afe787fd36c3f1efc7a2e3
+Title: Create Frontend
+Type: frontend
+Assigned To: frontend
+Completed At: 2026-03-12T22:05:10.842529
+
+Description:
+Create the frontend using HTML, CSS, JS
