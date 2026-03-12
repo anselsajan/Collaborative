@@ -1,0 +1,10 @@
+Task ID: 69b23a1f7e5869b2aca88d44
+Title: backend 
+Type: backend
+Assigned To: backend
+Status: done
+Framework: FastAPI
+Exported At: 2026-03-12T09:36:25.751681
+
+Description:
+backend for app
