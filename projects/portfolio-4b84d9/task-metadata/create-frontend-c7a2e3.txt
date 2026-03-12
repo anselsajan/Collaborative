@@ -4,7 +4,7 @@ Type: frontend
 Assigned To: frontend
 Status: done
 Framework: N/A
-Exported At: 2026-03-12T22:05:24.791460
+Exported At: 2026-03-12T22:37:42.034815
 
 Description:
 Create the frontend using HTML, CSS, JS
