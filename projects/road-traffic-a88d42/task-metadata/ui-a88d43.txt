@@ -1,0 +1,10 @@
+Task ID: 69b239fe7e5869b2aca88d43
+Title: ui 
+Type: frontend
+Assigned To: frontend
+Status: done
+Framework: React
+Exported At: 2026-03-12T09:36:25.751681
+
+Description:
+ui for traffic app
