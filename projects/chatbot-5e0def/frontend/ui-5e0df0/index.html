@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Alex Vincent | Portfolio</title>
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg: #0a0a0f;
+      --surface: #12121a;
+      --accent: #6c63ff;
+      --accent2: #ff6584;
+      --text: #e8e8f0;
+      --muted: #8888aa;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* --- NAV --- */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.2rem 8%;
+      background: rgba(10, 10, 15, 0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(108, 99, 255, 0.1);
+      z-index: 100;
+    }
+
+    .logo {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--accent);
+      letter-spacing: 2px;
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.9rem;
+      letter-spacing: 1px;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover { color: var(--accent); }
+
+    /* --- HERO --- */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 0 8%;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Animated background grid */
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(108,99,255,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(108,99,255,0.04) 1px, transparent 1px);
+      background-size: 50px 50px;
+      animation: gridMove 20s linear infinite;
+    }
+
+    @keyframes gridMove {
+      0%   { transform: translateY(0); }
+      100% { transform: translateY(50px); }
+    }
+
+    /* Glowing orbs */
+    .orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(80px);
+      opacity: 0.3;
+      animation: floatOrb 8s ease-in-out infinite;
+    }
+
+    .orb-1 {
+      width: 400px; height: 400px;
+      background: var(--accent);
+      top: -100px; right: 10%;
+      animation-delay: 0s;
+    }
+
+    .orb-2 {
+      width: 300px; height: 300px;
+      background: var(--accent2);
+      bottom: 10%; left: -50px;
+      animation-delay: -4s;
+    }
+
+    @keyframes floatOrb {
+      0%, 100% { transform: translateY(0) scale(1); }
+      50%       { transform: translateY(-30px) scale(1.05); }
+    }
+
+    /* Hero content */
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 700px;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: rgba(108,99,255,0.15);
+      border: 1px solid rgba(108,99,255,0.3);
+      color: var(--accent);
+      font-size: 0.8rem;
+      padding: 0.35rem 0.9rem;
+      border-radius: 50px;
+      margin-bottom: 1.5rem;
+      letter-spacing: 1px;
+      animation: fadeUp 0.6s ease both;
+    }
+
+    .tag::before {
+      content: '';
+      width: 6px; height: 6px;
+      background: var(--accent);
+      border-radius: 50%;
+      animation: pulse 1.5s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50%       { opacity: 0.4; transform: scale(1.5); }
+    }
+
+    h1 {
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      font-weight: 800;
+      line-height: 1.1;
+      margin-bottom: 1rem;
+      animation: fadeUp 0.6s 0.1s ease both;
+    }
+
+    h1 .highlight {
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .subtitle {
+      font-size: clamp(1rem, 2vw, 1.2rem);
+      color: var(--muted);
+      line-height: 1.7;
+      margin-bottom: 2.5rem;
+      max-width: 540px;
+      animation: fadeUp 0.6s 0.2s ease both;
+    }
+
+    /* Typed text */
+    .typed-wrap {
+      font-size: 1.1rem;
+      color: var(--text);
+      margin-bottom: 2.5rem;
+      min-height: 1.8rem;
+      animation: fadeUp 0.6s 0.25s ease both;
+    }
+
+    .typed-text { color: var(--accent); font-weight: 600; }
+    .cursor { animation: blink 0.7s step-end infinite; }
+    @keyframes blink { 0%,100% { opacity: 1; } 50% { opacity: 0; } }
+
+    /* Buttons */
+    .hero-actions {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      animation: fadeUp 0.6s 0.3s ease both;
+    }
+
+    .btn {
+      padding: 0.85rem 2rem;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      transition: transform 0.2s, box-shadow 0.2s;
+      letter-spacing: 0.5px;
+    }
+
+    .btn:hover { transform: translateY(-3px); }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent), #9b8fff);
+      color: white;
+      border: none;
+      box-shadow: 0 0 25px rgba(108,99,255,0.35);
+    }
+
+    .btn-primary:hover { box-shadow: 0 0 40px rgba(108,99,255,0.55); }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--text);
+      border: 1.5px solid rgba(255,255,255,0.15);
+    }
+
+    .btn-outline:hover { border-color: var(--accent); color: var(--accent); }
+
+    /* Tech stack pills */
+    .tech-stack {
+      position: absolute;
+      right: 8%;
+      top: 50%;
+      transform: translateY(-50%);
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      z-index: 1;
+      animation: fadeUp 0.6s 0.4s ease both;
+    }
+
+    .tech-pill {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      background: var(--surface);
+      border: 1px solid rgba(108,99,255,0.2);
+      padding: 0.55rem 1rem;
+      border-radius: 50px;
+      font-size: 0.82rem;
+      color: var(--muted);
+      transition: border-color 0.3s, color 0.3s, transform 0.3s;
+      cursor: default;
+    }
+
+    .tech-pill:hover {
+      border-color: var(--accent);
+      color: var(--text);
+      transform: translateX(-6px);
+    }
+
+    .tech-icon { font-size: 1.1rem; }
+
+    /* Scroll indicator */
+    .scroll-hint {
+      position: absolute;
+      bottom: 2.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.4rem;
+      color: var(--muted);
+      font-size: 0.75rem;
+      letter-spacing: 1px;
+      z-index: 1;
+    }
+
+    .scroll-arrow {
+      width: 20px; height: 30px;
+      border: 2px solid rgba(108,99,255,0.4);
+      border-radius: 10px;
+      position: relative;
+    }
+
+    .scroll-arrow::after {
+      content: '';
+      width: 4px; height: 6px;
+      background: var(--accent);
+      border-radius: 2px;
+      position: absolute;
+      top: 5px; left: 50%;
+      transform: translateX(-50%);
+      animation: scrollDown 1.5s ease-in-out infinite;
+    }
+
+    @keyframes scrollDown {
+      0%   { top: 5px; opacity: 1; }
+      100% { top: 16px; opacity: 0; }
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .tech-stack { display: none; }
+      nav { padding: 1rem 5%; }
+      .hero { padding: 0 5%; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="#" class="logo">AV.</a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+
+    <!-- Background orbs -->
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+
+    <!-- Main content -->
+    <div class="hero-content">
+      <div class="tag">Available for Internships</div>
+
+      <h1>
+        Hi, I'm <span class="highlight">Alex Vincent</span><br/>
+        I build things for<br/>
+        <span class="highlight">the web & beyond.</span>
+      </h1>
+
+      <div class="typed-wrap">
+        I'm a <span class="typed-text" id="typed"></span><span class="cursor">|</span>
+      </div>
+
+      <p class="subtitle">
+        Computer Science student passionate about game development,
+        full-stack web apps, and building immersive experiences —
+        from Unity 3D worlds to real-time APIs.
+      </p>
+
+      <div class="hero-actions">
+        <a href="#projects" class="btn btn-primary">View Projects</a>
+        <a href="#contact" class="btn btn-outline">Get in Touch</a>
+      </div>
+    </div>
+
+    <!-- Tech stack pills -->
+    <div class="tech-stack">
+      <div class="tech-pill"><span class="tech-icon">🎮</span> Unity & C#</div>
+      <div class="tech-pill"><span class="tech-icon">🐍</span> Python</div>
+      <div class="tech-pill"><span class="tech-icon">🌐</span> HTML / CSS / JS</div>
+      <div class="tech-pill"><span class="tech-icon">🔥</span> Firebase</div>
+      <div class="tech-pill"><span class="tech-icon">🍃</span> MongoDB</div>
+      <div class="tech-pill"><span class="tech-icon">⚡</span> FastAPI</div>
+    </div>
+
+    <!-- Scroll hint -->
+    <div class="scroll-hint">
+      <div class="scroll-arrow"></div>
+      SCROLL
+    </div>
+
+  </section>
+
+  <script>
+    // Typing animation
+    const roles = [
+      "Game Developer 🎮",
+      "Full-Stack Developer 🌐",
+      "Unity Enthusiast 🕹️",
+      "Problem Solver 🧠",
+      "CS Student 📚"
+    ];
+
+    let roleIdx = 0, charIdx = 0, deleting = false;
+    const typedEl = document.getElementById('typed');
+
+    function type() {
+      const current = roles[roleIdx];
+      if (!deleting) {
+        typedEl.textContent = current.slice(0, ++charIdx);
+        if (charIdx === current.length) {
+          deleting = true;
+          setTimeout(type, 1800);
+          return;
+        }
+      } else {
+        typedEl.textContent = current.slice(0, --charIdx);
+        if (charIdx === 0) {
+          deleting = false;
+          roleIdx = (roleIdx + 1) % roles.length;
+        }
+      }
+      setTimeout(type, deleting ? 50 : 80);
+    }
+
+    type();
+  </script>
+
+</body>
+</html>
