@@ -1,0 +1,10 @@
+Task ID: 69b13cd4edcd0aa2a45e0df0
+Title: ui 
+Type: frontend
+Assigned To: frontend
+Status: done
+Framework: React
+Exported At: 2026-03-13T14:37:28.317206
+
+Description:
+ui for chatbot
