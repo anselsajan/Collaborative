@@ -1,0 +1,10 @@
+Task ID: 69ff29c8e12d7c2786901558
+Title: Display a error message
+Type: frontend
+Assigned To: Febin
+Status: done
+Framework: N/A
+Exported At: 2026-05-10T17:02:47.509788
+
+Description:
+dispaly error message UI
