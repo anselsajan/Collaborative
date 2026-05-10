@@ -1,0 +1,10 @@
+Task ID: 69ff29f2e12d7c2786901559
+Title: Create a calculator
+Type: backend
+Assigned To: Febin2
+Status: done
+Framework: N/A
+Exported At: 2026-05-10T17:02:47.509788
+
+Description:
+Create calculator backend
